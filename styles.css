@@ -1,0 +1,170 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+}
+html, body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden; /* إزالة الإزاحة الجانبية */
+}
+
+.hero {
+    background-color: #f4f4f4;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    padding: 0 20px;
+    flex-wrap: wrap; /* لجعل العناصر تتناسب مع الشاشات الصغيرة */
+}
+
+.hero-image img {
+    width: 100%;
+    max-width: 150px; /* لمنع تضخم الصورة في الشاشات الكبيرة */
+    height: auto;
+    border-radius: 50%;
+    border: 5px solid #007bff;
+}
+
+.hero-info {
+    margin-left: 20px;
+    text-align: center; /* لجعل النص في المنتصف عند الشاشات الصغيرة */
+}
+
+.hero-info h1 {
+    margin-bottom: 5px;
+    font-size: 2rem;
+}
+
+.hero-info h2 {
+    font-size: 1.5rem;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.hero-info p {
+    font-size: 1rem;
+}
+
+.main-content {
+    display: flex;
+    width: 100%;
+    margin: 20px auto;
+    padding: 0 20px;
+    flex-wrap: wrap; /* لجعل المحتوى يتناسب مع الشاشات الصغيرة */
+}
+
+.sidebar {
+    flex: 1;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+.sidebar h3 {
+    margin-bottom: 10px;
+    color: #007bff;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding-left: 10px;
+}
+
+.sidebar ul li {
+    margin-bottom: 5px;
+}
+
+.content {
+    flex: 3;
+}
+
+.content h3 {
+    margin-bottom: 10px;
+    color: #007bff;
+}
+
+.content p {
+    margin-bottom: 20px;
+}
+
+.interests ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding-left: 0;
+    list-style-type: none;
+}
+
+.interests ul li {
+    margin-bottom: 10px;
+}
+
+/* إعدادات التوافق مع الشاشات الصغيرة */
+@media (max-width: 768px) {
+    .hero-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-info {
+        margin: 10px 0;
+    }
+
+    .main-content {
+        display: flex;
+        flex-direction: column-reverse; /* نقل القائمة الجانبية أسفل المحتوى */
+        padding: 0 10px;
+    }
+
+    .sidebar, .content {
+        margin-right: 0;
+        width: 100%; /* عرض القائمة الجانبية والمحتوى الأساسي 100% للشاشات الصغيرة */
+    }
+
+    .interests ul {
+        grid-template-columns: 1fr;
+    }
+}
+
+.sidebar section {
+    margin-top: 20px;
+}
+
+.download-cv {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.cv-button {
+    display: inline-block;
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cv-button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.cv-button:active {
+    transform: scale(0.95);
+}
